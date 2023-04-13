@@ -3,9 +3,10 @@ dotenv.config();
 const express=require("express");
 const routes=require("./Routes/routes");
 const db=require("./config/db_connection");
-const app=express(routes);
+const app=express();
 
 db();
+app.use("/api",routes);
 app.get("/",(req,res)=>
 {
     try{
@@ -18,5 +19,5 @@ app.get("/",(req,res)=>
 })
 app.listen(process.env.PORT,()=>
 {
-    console.log("Server is listening to port 3000");
+    console.log("Server is listening to port 3001");
 });

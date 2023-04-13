@@ -1,10 +1,16 @@
 const mongoose=require("mongoose");
 
 const Bus_Schema=new mongoose.Schema({
-    bus_Name:
+    bus_Owner_Name:
     {
         type:String,
         required:true
+    },
+    bus_No:
+    {
+      type:String,
+      required:true,
+      unique:true
     },
     no_Of_Seats:
     {

@@ -4,13 +4,15 @@ dotenv.config();
 
 const dbconnection=async()=>
 {
-const connect=mongoose.connect(process.env.MONGO_DB,()=>
-{
+try{
+    const connect=await mongoose.connect(process.env.MONGO_DB);
+    //console.log(connect.connection.name);
     console.log("Database Connected ");
-}).catch((err)=>
+}
+catch(err)
 {
     console.log(err.message);
-});
+};
 };
 
 module.exports=dbconnection;

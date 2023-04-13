@@ -14,7 +14,7 @@ Router.use(
 Router.use("/user",user);
 
 // bus related routing
-Router.post("/bus",bus);
+//Router.use("/bus",bus);
 
 // seat related routing
 //Router.use("/seat",seat_controller);
